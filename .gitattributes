@@ -1,0 +1,20 @@
+# Windows scripts are stored exactly as they are (CRLF line endings), with no
+# conversion, so double-clicking works after a download, a web upload or a clone.
+*.bat   -text
+*.cmd   -text
+*.ps1   -text
+
+# Everything else that is text: normalised to LF in the repository.
+*.py    text eol=lf
+*.md    text
+*.json  text
+*.txt   text
+
+# Binary test fixtures.
+*.pptx  binary
+*.xlsx  binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.tif   binary
+*.pdf   binary

@@ -1,0 +1,32 @@
+Synthetic integration checks
+============================
+
+1. Run create_fixture.py to regenerate synthetic.pptx and expected.json.
+2. Record synthetic.pptx SHA-256 before running the exporter.
+3. Export with full width 165.1 mm and half width 82.55 mm, default safe policy.
+4. Check report against expected.json:
+   - Eight input slides accounted for, including every skipped or review item.
+   - Exactly four figures exported in slide/read order as Fig1.pdf to Fig4.pdf.
+   - Native table, bitmap table, and Excel object are never numbered as figures.
+   - Hidden slide and off-slide content are explicitly reported.
+   - Full/half source labels determine the expected physical widths.
+5. Run verify_synthetic_exports.py OUTPUT_DIR for independent PDF checks:
+   - One page each, correct physical width, nonempty render.
+   - Searchable native text survives and figure captions are excluded.
+   - Visible content does not touch crop boundary.
+6. Visually compare source slide previews and figure previews:
+   - Both panels stay together on slide 1.
+   - Line chart retains its labels/legend on slide 3.
+   - Slide 4 becomes two separate PDFs, each retaining its two panels.
+   - Relative layout and aspect ratio are unchanged.
+7. Recompute source SHA-256 and verify equality with step 2.
+8. Retry with the same destination and confirm it refuses to overwrite outputs.
+9. In a separate new output directory, test manual overrides:
+   - Mark bitmap table as table and confirm a traceable skip.
+   - Override one accepted figure width and confirm only that figure changes size.
+   - Supply explicit shape IDs for the two figures on slide 4.
+10. Test invalid crop/shape ID/width and confirm a clear validation failure.
+
+The synthetic deck is not a replacement for visual QA on a real paper deck.
+PowerPoint may rasterize unsupported OLE previews or non-embeddable fonts;
+source structure, renderer warnings, and PDF resources must be inspected.

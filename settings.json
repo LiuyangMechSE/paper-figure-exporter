@@ -1,0 +1,13 @@
+{
+  "_help": "Optional. Edit with Notepad. Widths in mm; full_width_mm null = keep each figure's size from the slide. See README.md.",
+  "full_width_mm": 165.1,
+  "half_width_mm": null,
+  "offslide_content": "clip",
+  "half_width_text": "match_full",
+  "max_file_mb": 10,
+  "min_ppi": 600,
+  "preview_dpi": 600,
+  "include_hidden_slides": false,
+  "strict_ppi": false,
+  "open_results_when_done": true
+}

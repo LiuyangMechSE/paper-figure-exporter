@@ -1,0 +1,69 @@
+{
+  "slide_size_inches": [
+    10,
+    7.5
+  ],
+  "test_widths_mm": {
+    "full": 165.1,
+    "half": 82.55
+  },
+  "slides": [
+    {
+      "slide": 1,
+      "expect": "figure",
+      "width": "full",
+      "pdf": "Fig1.pdf",
+      "check": "Keep both vector panels and text; exclude caption; crop around art."
+    },
+    {
+      "slide": 2,
+      "expect": "table",
+      "pdf": null,
+      "check": "Skip native table and retain traceable reason in manifest."
+    },
+    {
+      "slide": 3,
+      "expect": "figure",
+      "width": "half",
+      "pdf": "Fig2.pdf",
+      "check": "Native line chart and legend remain intact; exclude caption."
+    },
+    {
+      "slide": 4,
+      "expect": "two figures",
+      "width": [
+        "half",
+        "half"
+      ],
+      "pdf": [
+        "Fig3.pdf",
+        "Fig4.pdf"
+      ],
+      "check": "Split at separate figure anchors; preserve panels inside each group."
+    },
+    {
+      "slide": 5,
+      "expect": "review",
+      "pdf": null,
+      "check": "Unlabelled picture of table should be withheld, with visible preview."
+    },
+    {
+      "slide": 6,
+      "expect": "table or review",
+      "pdf": null,
+      "check": "Excel OLE is not assumed to be figure; disclose cached appearance."
+    },
+    {
+      "slide": 7,
+      "expect": "skip unless include-hidden",
+      "pdf": null,
+      "check": "Record hidden-slide skip; do not silently omit it."
+    },
+    {
+      "slide": 8,
+      "expect": "review",
+      "pdf": null,
+      "check": "Do not silently clip content extending beyond slide edge."
+    }
+  ]
+}

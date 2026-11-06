@@ -1,0 +1,168 @@
+{
+  "source": "highres_synthetic.pptx",
+  "slide_size_inches": [
+    12,
+    9
+  ],
+  "purpose": "pixel and appearance preservation, not merely larger DPI numbers",
+  "cases": [
+    {
+      "slide": 1,
+      "shape_id": 6,
+      "case": "plain",
+      "asset": "pattern.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGB",
+      "source_sha256": "4368989df4abeb83f43937bae0f664e925ce43e970efcdecb07ccf3c34502e5b",
+      "expected": "exact original RGB pixels; no resampling"
+    },
+    {
+      "slide": 1,
+      "shape_id": 7,
+      "case": "crop",
+      "asset": "pattern.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGB",
+      "source_sha256": "4368989df4abeb83f43937bae0f664e925ce43e970efcdecb07ccf3c34502e5b",
+      "expected": "preserve visible source region and existing clip",
+      "crop": [
+        0.2,
+        0.2,
+        0.1,
+        0.1
+      ]
+    },
+    {
+      "slide": 1,
+      "shape_id": 8,
+      "case": "rotate90_flipH",
+      "asset": "pattern.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGB",
+      "source_sha256": "4368989df4abeb83f43937bae0f664e925ce43e970efcdecb07ccf3c34502e5b",
+      "expected": "orientation marks TL/TR/BL/BR retain correct positions",
+      "rotation": 90,
+      "flip_h": true
+    },
+    {
+      "slide": 1,
+      "shape_id": 11,
+      "case": "alpha_rotate23",
+      "asset": "alpha.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGBA",
+      "source_sha256": "1a55891e9327246cb1d3ecd5cac41472ba80f78e513eafd1a058a7d143c52ab5",
+      "expected": "alpha holes/gradient show cyan background, no halo",
+      "rotation": 23
+    },
+    {
+      "slide": 1,
+      "shape_id": 15,
+      "case": "nested_scaled_group",
+      "asset": "pattern.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGB",
+      "source_sha256": "4368989df4abeb83f43937bae0f664e925ce43e970efcdecb07ccf3c34502e5b",
+      "expected": "native foreground and relative ordering remain unchanged",
+      "top_level_id": 13,
+      "group_ids": [
+        13,
+        14
+      ]
+    },
+    {
+      "slide": 1,
+      "shape_id": 21,
+      "case": "alpha_unrotated",
+      "asset": "alpha.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGBA",
+      "source_sha256": "1a55891e9327246cb1d3ecd5cac41472ba80f78e513eafd1a058a7d143c52ab5",
+      "expected": "exact source alpha retained over yellow background"
+    },
+    {
+      "slide": 1,
+      "shape_id": 22,
+      "case": "low_resolution",
+      "asset": "lowres.png",
+      "pixels": [
+        52,
+        32
+      ],
+      "mode": "RGBA",
+      "source_sha256": "c1f64a51ed297d8deffbc9a2b3649c35bcbb1bc5e1eedea97c287ca8c8703957",
+      "expected": "report below target; never upscale or invent detail"
+    },
+    {
+      "slide": 2,
+      "shape_id": 9,
+      "case": "color_key",
+      "asset": "colorkey.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGB",
+      "source_sha256": "b2305ddc67e6a7ac68433ca987150c59426243023aed164c0b16a2caa06e4893",
+      "expected": "preserve transparency effect or retain native fallback with explicit unsupported warning"
+    },
+    {
+      "slide": 2,
+      "shape_id": 10,
+      "case": "brightness_contrast",
+      "asset": "pattern.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGB",
+      "source_sha256": "4368989df4abeb83f43937bae0f664e925ce43e970efcdecb07ccf3c34502e5b",
+      "expected": "must not silently replace treated image with untreated RGB; faithful effect or explicit fallback"
+    },
+    {
+      "slide": 2,
+      "shape_id": 11,
+      "case": "ellipse_flipV",
+      "asset": "pattern.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGB",
+      "source_sha256": "4368989df4abeb83f43937bae0f664e925ce43e970efcdecb07ccf3c34502e5b",
+      "expected": "ellipse clip and vertical flip retained; corners show green"
+    },
+    {
+      "slide": 2,
+      "shape_id": 14,
+      "case": "object_opacity",
+      "asset": "alpha.png",
+      "pixels": [
+        2100,
+        1470
+      ],
+      "mode": "RGBA",
+      "source_sha256": "1a55891e9327246cb1d3ecd5cac41472ba80f78e513eafd1a058a7d143c52ab5",
+      "expected": "source alpha times object opacity preserved or explicit fallback"
+    }
+  ],
+  "source_sha256": "7dbde06e0fe1f566369aa542dbee348042423ee47a46c1e755b6a6f6e3ff49d4"
+}

@@ -1,0 +1,15 @@
+{
+  "full_width_mm": 165.1,
+  "half_width_mm": 82.55,
+  "width_provenance": "Synthetic renderer capability test only",
+  "slides": {
+    "1": {"kind": "skip"},
+    "2": {"kind": "skip"},
+    "3": {"kind": "skip"},
+    "4": {"kind": "skip"},
+    "5": {"kind": "skip"},
+    "6": {"groups": [{"kind": "figure", "shape_ids": "all_content", "width": "full", "label": "Explicit cached OLE rendering test; default export holds this table"}]},
+    "7": {"kind": "skip"},
+    "8": {"groups": [{"kind": "figure", "shape_ids": "all_content", "width": "full", "allow_offslide": true, "label": "Expanded canvas test"}]}
+  }
+}

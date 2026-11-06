@@ -1,0 +1,70 @@
+{
+  "source_sha256": "7dbde06e0fe1f566369aa542dbee348042423ee47a46c1e755b6a6f6e3ff49d4",
+  "width_provenance": "Synthetic QA: 12 by 9 inch slide; preserve source canvas for direct coordinate comparison.",
+  "slides": {
+    "1": {
+      "groups": [
+        {
+          "kind": "figure",
+          "width": "full",
+          "shape_ids": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "crop_pt": [
+            0,
+            0,
+            864,
+            648
+          ]
+        }
+      ]
+    },
+    "2": {
+      "groups": [
+        {
+          "kind": "figure",
+          "width": "full",
+          "shape_ids": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "crop_pt": [
+            0,
+            0,
+            864,
+            648
+          ]
+        }
+      ]
+    }
+  }
+}
